@@ -1,4 +1,56 @@
-# Main entrypoint of the workflow. 
-# Please follow the best practices: 
-# https://snakemake.readthedocs.io/en/stable/snakefiles/best_practices.html,
-# in particular regarding the standardized folder structure mentioned there. 
+# Main entrypoint of the workflow.
+
+# Quality process of reads
+rule qc:
+	input:
+		"""
+		r1=
+		r2=
+		"""
+	output:
+		"""
+		"""
+	shell:
+		"""
+		"""
+# Assembly contigs with Spades or Megahit
+rule qc:
+	input:
+		"""
+		r1=
+		r2=
+		"""
+	output:
+		"""
+		"""
+	shell:
+		"""
+		"""
+
+# Check contigs qc QUAST
+rule qc:
+	input:
+		"""
+		r1=
+		r2=
+		"""
+	output:
+		"""
+		"""
+	shell:
+		"""
+		"""
+
+# Create figures, R?
+rule qc:
+	input:
+		"""
+		r1=
+		r2=
+		"""
+	output:
+		"""
+		"""
+	shell:
+		"""
+		"""
