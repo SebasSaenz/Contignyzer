@@ -5,19 +5,23 @@ rule assemble:
     output:
         "results/assemblies/{assembler}/kmers_{kmers}/contigs.fasta"
     params:
-        kmers=lambda wc: ",".join(wc.kmers.split("-")),
-        kmers_spades=lambda wc: " ".join(["--k {}".format(k) for k in wc.kmers.split("-")])
+        kmers_csv=lambda wc: ",".join(wc.kmers.split("-"))
     shell:
         """
         if [ "{wildcards.assembler}" == "megahit" ]; then
-            megahit -1 {input.R1} -2 {input.R2} -o results/assemblies/megahit/kmers_{wildcards.kmers} \
-                    --k-list {params.kmers} && \
+            megahit -1 {input.R1} -2 {input.R2} \
+                    -o results/assemblies/megahit/kmers_{wildcards.kmers} \
+                    --k-list {params.kmers_csv} && \
             cp results/assemblies/megahit/kmers_{wildcards.kmers}/final.contigs.fa {output} ;
+        
         elif [ "{wildcards.assembler}" == "metaspades" ]; then
-            spades.py -1 {input.R1} -2 {input.R2} {params.kmers_spades} -o results/assemblies/metaspades/kmers_{wildcards.kmers} && \
+            spades.py -1 {input.R1} -2 {input.R2} \
+                    -k {params.kmers_csv} \
+                    -o results/assemblies/metaspades/kmers_{wildcards.kmers} && \
             cp results/assemblies/metaspades/kmers_{wildcards.kmers}/contigs.fasta {output} ;
         fi
         """
+
 
 rule evaluate:
     input:
