@@ -1,0 +1,14 @@
+name: Contignyzer
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - snakemake
+  - megahit
+  - spades
+  - quast
+  - pandas
+  - matplotlib
+  - seaborn

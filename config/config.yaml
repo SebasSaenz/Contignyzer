@@ -1,0 +1,13 @@
+reads:
+  R1: "data/raw_reads/sample_R1.fastq.gz"
+  R2: "data/raw_reads/sample_R2.fastq.gz"
+
+assemblers:
+  - megahit
+  - metaspades
+
+kmer_sets:
+  - [21, 33, 55]
+  - [41, 61, 81]
+
+output_dir: "results"
