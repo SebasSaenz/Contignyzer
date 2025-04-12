@@ -16,3 +16,17 @@ A modular tool to compare and evaluate metagenome assemblies using MEGAHIT and m
 - Conda
 - Python 3.11
 - Snakemake, MEGAHIT, SPAdes, QUAST
+
+## Project structure
+
+```
+contignyzer/
+├── config/
+│   └── config.yaml         # User input (read paths, tools, parameters)
+├── workflow/
+│   └── Snakefile           # The core workflow
+├── results/                # Output from assemblies and evaluations
+├── environment.yaml        # All dependencies in one conda env
+├── data/                   # Input reads go here
+└── README.md               # Document your project
+```
