@@ -1,3 +1,5 @@
+threads: 8   # or whatever number of threads you want
+
 reads:
   R1: "data/raw_reads/sample_R1.fastq.gz"
   R2: "data/raw_reads/sample_R2.fastq.gz"
