@@ -6,7 +6,7 @@
 
 ## 📁 Folder Structure
 
-```
+```         
 contignyzer/
 ├── config/
 │   └── config.yaml               # Input samples, k-mer sets, global settings
@@ -30,7 +30,26 @@ contignyzer/
 ├── Snakefile                     # Main Snakefile (includes modular rules)
 └── README.md
 ```
+
 ------------------------------------------------------------------------
+
+🚀 How to Use
+
+1.  Clone this repository
+
+```         
+git clone https://github.com/yourusername/contignyzer.git 
+cd contignyzer
+```
+
+2.  Create the conda environment
+
+```         
+conda env create -f envs/contignyzer.yaml 
+conda activate contignyzer
+```
+
+3.  Prepare your data. Place your gzipped paired-end reads in data/raw/ and edit config/config.yaml with your sample names and paths.
 
 ## 🧪 Example Config
 
@@ -54,19 +73,15 @@ assemblers: [spades]
 threads: 8
 ```
 
-🚀 How to Use
+4.  Run the workflow
 
-1.  Clone this repository git clone <https://github.com/yourusername/contignyzer.git> cd contignyzer
+```         
+snakemake --cores 8 
+```
 
-2.  Create the conda environment conda env create -f envs/contignyzer.yaml conda activate contignyzer
+This will run SPAdes for each sample and k-mer set Log runtime for each assembly Output assemblies and logs in the results/ and logs/ folders 📋 Tasks and Roadmap
 
-3.  Prepare your data Place your gzipped paired-end reads in data/raw/ and edit config/config.yaml with your sample names and paths.
-
-4.  Run the workflow snakemake --cores 8 This will:
-
-Run SPAdes for each sample and k-mer set Log runtime for each assembly Output assemblies and logs in the results/ and logs/ folders 📋 Tasks and Roadmap
-
-Status Task
+## Status Task
 
 ✅ Modular SPAdes rule with runtime tracking
 
@@ -100,17 +115,19 @@ Status Task
 
 ⏳ Publication-ready preprint or paper
 
-🤝 Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request. See the issues tab for features you can help with.
+Contributions are welcome! Please open an issue or submit a pull request.
 
-📜 License
+## 📜 License
 
 Distributed under the MIT License. See LICENSE for details.
 
-👤 Author
+## 👤 Author
 
-Developed by Johan Sebastián Sáenz, microbial e Contact: [johan.saenzmedina\@uni-hohenheim.de]
+Developed by Johan Sebastián Sáenz
+
+Contact: [johan.saenzmedina\@uni-hohenheim.de]
 
 📣 Citation
 
