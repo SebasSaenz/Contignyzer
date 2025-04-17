@@ -1,8 +1,8 @@
 samples:
-  chicken_gut_01:
+  sample_01:
     R1: "data/raw/chicken_gut_01_R1.fastq.gz"
     R2: "data/raw/chicken_gut_01_R2.fastq.gz"
-  chicken_gut_02:
+  sample_02:
     R1: "data/raw/chicken_gut_02_R1.fastq.gz"
     R2: "data/raw/chicken_gut_02_R2.fastq.gz"
 

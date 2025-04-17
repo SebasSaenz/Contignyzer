@@ -1,14 +1,20 @@
-name: Contignyzer
+name: contignyzer
+
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
   - defaults
+
 dependencies:
-  - python=3.11
+  - python=3.10
   - snakemake
-  - megahit
   - spades
+  - megahit
   - quast
   - pandas
   - matplotlib
   - seaborn
+  - pip
+  - pip:
+      - jinja2  # For future HTML report option
+  - coreutils  # for GNU time
