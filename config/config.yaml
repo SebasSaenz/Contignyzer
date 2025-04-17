@@ -1,15 +1,15 @@
-threads: 8   # or whatever number of threads you want
-
-reads:
-  R1: "data/raw_reads/sample_R1.fastq.gz"
-  R2: "data/raw_reads/sample_R2.fastq.gz"
-
-assemblers:
-  - megahit
-  - metaspades
+samples:
+  chicken_gut_01:
+    R1: "data/raw/chicken_gut_01_R1.fastq.gz"
+    R2: "data/raw/chicken_gut_01_R2.fastq.gz"
+  chicken_gut_02:
+    R1: "data/raw/chicken_gut_02_R1.fastq.gz"
+    R2: "data/raw/chicken_gut_02_R2.fastq.gz"
 
 kmer_sets:
-  - [21, 33, 55]
-  - [41, 61, 81]
+  kset1: [21, 33, 55]
+  kset2: [27, 37, 47]
 
-output_dir: "results"
+assemblers: [spades]
+
+threads: 8
