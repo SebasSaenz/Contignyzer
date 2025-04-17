@@ -6,8 +6,30 @@
 
 ## 📁 Folder Structure
 
-<pre> contignyzer/ ├── config/ │ └── config.yaml # Input samples, k-mer sets, global settings ├── rules/ │ ├── all.smk # Rule to build all final targets │ ├── spades.smk # SPAdes assembly rule │ ├── megahit.smk # MEGAHIT assembly rule (coming soon) │ ├── quast.smk # QUAST evaluation rule (coming soon) │ └── summary.smk # Summary plots + table (coming soon) ├── envs/ │ └── contignyzer.yaml # Conda environment for the whole pipeline ├── scripts/ │ └── summarize_quast.py # Script to parse QUAST + time logs (TBD) ├── data/ │ └── raw/ # Input FASTQ files (gzipped supported) ├── results/ │ └── assemblies/ # Assembly outputs (SPAdes, MEGAHIT) │ └── quast/ # QUAST reports │ └── summary/ # Summary tables and plots ├── logs/ # Assembly logs + runtime tracking ├── Snakefile # Main Snakefile (includes modular rules) └── README.md </pre>
-
+```
+contignyzer/
+├── config/
+│   └── config.yaml               # Input samples, k-mer sets, global settings
+├── rules/                       
+│   ├── all.smk                   # Rule to build all final targets
+│   ├── spades.smk                # SPAdes assembly rule
+│   ├── megahit.smk               # MEGAHIT assembly rule (coming soon)
+│   ├── quast.smk                 # QUAST evaluation rule (coming soon)
+│   └── summary.smk               # Summary plots + table (coming soon)
+├── envs/
+│   └── contignyzer.yaml          # Conda environment for the whole pipeline
+├── scripts/
+│   └── summarize_quast.py        # Script to parse QUAST + time logs (TBD)
+├── data/
+│   └── raw/                      # Input FASTQ files (gzipped supported)
+├── results/
+│   ├── assemblies/               # Assembly outputs (SPAdes, MEGAHIT)
+│   ├── quast/                    # QUAST reports
+│   └── summary/                  # Summary tables and plots
+├── logs/                         # Assembly logs + runtime tracking
+├── Snakefile                     # Main Snakefile (includes modular rules)
+└── README.md
+```
 ------------------------------------------------------------------------
 
 ## 🧪 Example Config
